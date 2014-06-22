@@ -1,7 +1,7 @@
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
-BALTIMORE_FIPS <- 24510
+BALTIMORE_FIPS <- '24510'
 motor_scc <- SCC[grepl('motor', SCC[['Short.Name']], ignore.case = TRUE, perl = TRUE), ]
 motor_nei <- NEI[NEI$SCC %in% motor_scc$SCC & NEI$fips==BALTIMORE_FIPS, ]
 

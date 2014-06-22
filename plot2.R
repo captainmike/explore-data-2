@@ -1,5 +1,5 @@
 NEI <- readRDS("summarySCC_PM25.rds")
-baltimore_pm25 <- NEI[NEI$fips==24510,]
+baltimore_pm25 <- NEI[NEI$fips=='24510',]
 year_sums <- tapply(baltimore_pm25$Emissions, baltimore_pm25$year, sum)
 data <- ldply(year_sums)
 names(data) <- c('Year', 'Emissions')
